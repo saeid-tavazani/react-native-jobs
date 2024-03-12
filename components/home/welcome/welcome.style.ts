@@ -1,11 +1,6 @@
 import { StyleSheet, TextStyle, ViewStyle } from "react-native";
 import { COLORS, FONT, SIZES } from "../../../constants";
 
-interface StyleProps {
-  activeJobType: string; // Adjust type according to your requirement
-  item: string; // Adjust type according to your requirement
-}
-
 const styles = StyleSheet.create({
   container: {
     width: "100%",
@@ -71,14 +66,14 @@ const styles = StyleSheet.create({
   },
 });
 
-export const getTabStyle = ({ activeJobType, item }: StyleProps) => ({
+const getTabStyle = (activeJobType: string, item: string) => ({
   ...styles.tab,
   borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
 });
 
-export const getTabTextStyle = ({ activeJobType, item }: StyleProps) => ({
+const getTabTextStyle = (activeJobType: string, item: string) => ({
   ...styles.tabText,
   color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
 });
-
+export { getTabStyle, getTabTextStyle };
 export default styles;
