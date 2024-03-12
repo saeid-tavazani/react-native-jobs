@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { View, Text, FlatList, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  TextInput,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 import { useRouter } from "expo-router";
 import styles from "./welcome.style";
 import { icons, SIZES } from "../../../constants";
@@ -14,8 +21,20 @@ const Welcome = () => {
       </View>
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
-          <TextInput style={styles.searchInput} />
+          <TextInput
+            style={styles.searchInput}
+            value=""
+            placeholder="What are you looking for?"
+            onChange={() => {}}
+          />
         </View>
+        <TouchableOpacity style={styles.searchBtn}>
+          <Image
+            source={icons.search}
+            resizeMode="contain"
+            style={styles.searchBtnImage}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
