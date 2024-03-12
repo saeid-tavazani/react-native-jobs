@@ -19,12 +19,19 @@ const Home = () => {
           headerTitle: "",
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
-
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+            <ScreenHeaderBtn
+              iconUrl={icons.menu}
+              handlePress={() => {}}
+              dimension="60%"
+            />
           ),
           headerRight: () => (
-            <ScreenHeaderBtn iconUrl={icons.profile} dimension="60%" />
+            <ScreenHeaderBtn
+              iconUrl={icons.profile}
+              handlePress={() => {}}
+              dimension="60%"
+            />
           ),
         }}
       />

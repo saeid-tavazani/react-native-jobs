@@ -5,11 +5,16 @@ import { getBtnImgStyle, styles } from "./screenheader.style";
 type Props = {
   iconUrl: ImageSourcePropType; // Correct type for iconUrl
   dimension: string; // Assuming dimension is a string, adjust accordingly
+  handlePress: () => void;
 };
 
-const ScreenHeaderBtn: React.FC<Props> = ({ iconUrl, dimension }) => {
+const ScreenHeaderBtn: React.FC<Props> = ({
+  iconUrl,
+  dimension,
+  handlePress,
+}) => {
   return (
-    <TouchableOpacity style={styles.btnContainer}>
+    <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
       <Image
         source={iconUrl} // Make sure iconUrl is of type ImageSourcePropType
         resizeMode="cover"
