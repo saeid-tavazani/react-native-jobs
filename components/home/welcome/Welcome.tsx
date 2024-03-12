@@ -28,7 +28,7 @@ const Welcome = () => {
             onChange={() => {}}
           />
         </View>
-        <TouchableOpacity style={styles.searchBtn}>
+        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
           <Image
             source={icons.search}
             resizeMode="contain"
