@@ -1,11 +1,5 @@
 import { StyleSheet, ViewStyle, TextStyle } from "react-native";
-
 import { COLORS, FONT, SIZES } from "../../../../constants";
-
-interface StyleProps {
-  selectedJob: string;
-  item: any;
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -49,34 +43,35 @@ const styles = StyleSheet.create({
   },
 });
 
-export const getContainerStyle = ({
-  selectedJob,
-  item,
-}: StyleProps): ViewStyle => ({
+export const getContainerStyle = (
+  selectedJob: string,
+  item: string
+): ViewStyle => ({
   ...styles.container,
-  backgroundColor: selectedJob === item.job_id ? COLORS.primary : "#FFF",
+  backgroundColor: selectedJob === item ? COLORS.primary : "#FFF",
 });
 
-export const getLogoContainerStyle = ({
-  selectedJob,
-  item,
-}: StyleProps): ViewStyle => ({
+export const getLogoContainerStyle = (
+  selectedJob: string,
+  item: string
+): ViewStyle => ({
   ...styles.logoContainer,
-  backgroundColor: selectedJob === item.job_id ? "#FFF" : COLORS.white,
+  backgroundColor: selectedJob === item ? "#FFF" : COLORS.white,
 });
 
-export const getJobNameStyle = ({
-  selectedJob,
-  item,
-}: StyleProps): TextStyle => ({
+export const getJobNameStyle = (
+  selectedJob: string,
+  item: string
+): TextStyle => ({
   ...styles.jobName,
-  color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
+  color: selectedJob === item ? COLORS.white : COLORS.primary,
 });
 
-export const getPublisherStyle = ({
-  selectedJob,
-  item,
-}: StyleProps): TextStyle => ({
+export const getPublisherStyle = (
+  selectedJob: string,
+  item: string
+): TextStyle => ({
   ...styles.publisher,
-  color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
+  color: selectedJob === item ? COLORS.white : COLORS.primary,
 });
+export default styles;
